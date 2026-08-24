@@ -10,22 +10,30 @@ export const api = {
       body: formData,
     });
     
+    const text = await response.text();
+    
     if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.detail || 'Failed to upload resume');
+      try {
+        const error = JSON.parse(text);
+        throw new Error(error.detail || 'Failed to upload resume');
+      } catch (e) {
+        if (e.message.includes('Failed to')) throw e;
+        throw new Error(`Upload failed (${response.status})`);
+      }
     }
     
-    return response.json();
+    return JSON.parse(text);
   },
   
   async getResume(resumeId) {
     const response = await fetch(`${API_BASE}/resumes/${resumeId}`);
+    const text = await response.text();
     
     if (!response.ok) {
       throw new Error('Failed to get resume');
     }
     
-    return response.json();
+    return JSON.parse(text);
   },
   
   async reviewResume(resumeId, targetRole = null, jobDescription = null) {
@@ -40,12 +48,19 @@ export const api = {
       }),
     });
     
+    const text = await response.text();
+    
     if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.detail || 'Failed to review resume');
+      try {
+        const error = JSON.parse(text);
+        throw new Error(error.detail || 'Failed to review resume');
+      } catch (e) {
+        if (e.message.includes('Failed to')) throw e;
+        throw new Error(`Review failed (${response.status})`);
+      }
     }
     
-    return response.json();
+    return JSON.parse(text);
   },
   
   async deleteResume(resumeId) {
@@ -53,15 +68,18 @@ export const api = {
       method: 'DELETE',
     });
     
+    const text = await response.text();
+    
     if (!response.ok) {
       throw new Error('Failed to delete resume');
     }
     
-    return response.json();
+    return JSON.parse(text);
   },
   
   async healthCheck() {
     const response = await fetch(`${API_BASE}/health`);
-    return response.json();
+    const text = await response.text();
+    return JSON.parse(text);
   }
 };

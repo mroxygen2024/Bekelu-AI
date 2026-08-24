@@ -36,8 +36,8 @@ body {
   position: absolute;
   inset: -40px;
   background: url("/bekelu.jpg") top center / cover no-repeat;
-  filter: blur(24px);
-  transform: scale(1.1);
+  filter: blur(12px);
+  transform: scale(1.02);
 }
 
 .bg-wrap::after {

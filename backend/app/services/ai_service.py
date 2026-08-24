@@ -1,19 +1,26 @@
 import json
 import re
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 from app.core.config import settings
 from app.core.logging import logger
 
 class AIService:
     def __init__(self):
-        genai.configure(api_key=settings.GEMINI_API_KEY)
-        self.model = genai.GenerativeModel(settings.GEMINI_MODEL)
+        self.client = genai.Client(api_key=settings.GEMINI_API_KEY)
+        self.model = settings.GEMINI_MODEL
     
     async def generate_review(self, system_prompt: str, user_message: str) -> dict:
         try:
             full_prompt = f"{system_prompt}\n\n{user_message}\n\nIMPORTANT: Return ONLY the JSON object. No markdown, no code fences, no extra text."
             
-            response = await self.model.generate_content_async(full_prompt)
+            response = await self.client.aio.models.generate_content(
+                model=self.model,
+                contents=full_prompt,
+                config=types.GenerateContentConfig(
+                    temperature=0.7,
+                )
+            )
             
             if not response.text:
                 raise ValueError("Empty response from Gemini API")

@@ -36,17 +36,27 @@ class FileService:
                 detail=f"File too large. Maximum size is {settings.MAX_FILE_SIZE_MB}MB."
             )
     
-    def save_file(self, file: UploadFile, file_content: bytes) -> str:
+    def save_file(self, file: UploadFile, file_content: bytes) -> dict:
         file_id = str(uuid.uuid4())
         ext = Path(file.filename).suffix or ".pdf"
         filename = f"{file_id}{ext}"
         file_path = self.upload_dir / filename
         
+        content_type = magic.from_buffer(file_content, mime=True)
+        
         with open(file_path, "wb") as f:
             f.write(file_content)
         
         logger.info(f"File saved: {filename} ({len(file_content)} bytes)")
-        return file_id
+        
+        return {
+            "id": file_id,
+            "filename": filename,
+            "original_filename": file.filename,
+            "content_type": content_type,
+            "file_size": len(file_content),
+            "file_path": str(file_path)
+        }
     
     def get_file_path(self, file_id: str) -> Path:
         for ext in [".pdf", ".docx", ".doc"]:

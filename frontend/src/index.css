@@ -35,8 +35,8 @@ body {
   content: '';
   position: absolute;
   inset: -40px;
-  background: url("/bekelu.jpg") top center / cover no-repeat;
-  filter: blur(12px);
+  background: url("/bekelu.png") top center / cover no-repeat;
+  filter: blur(0.5px);
   transform: scale(1.02);
 }
 
@@ -51,6 +51,7 @@ body {
   position: relative;
   z-index: 1;
   min-height: 100vh;
+  padding-top: 4rem;
 }
 
 /* ── Custom Scrollbar ── */

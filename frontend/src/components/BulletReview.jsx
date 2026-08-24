@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { formatters } from '../utils/formatters';
 
 const BulletReview = ({ bulletReviews }) => {
   const [copiedIndex, setCopiedIndex] = useState(null);
@@ -10,6 +9,23 @@ const BulletReview = ({ bulletReviews }) => {
     navigator.clipboard.writeText(text);
     setCopiedIndex(index);
     setTimeout(() => setCopiedIndex(null), 2000);
+  };
+  
+  const getProblemTypeStyle = (type) => {
+    const styles = {
+      vague: 'bg-gray-100 text-gray-700',
+      too_long: 'bg-amber-100 text-amber-700',
+      too_short: 'bg-amber-100 text-amber-700',
+      no_impact: 'bg-rose-100 text-rose-700',
+      no_metric: 'bg-rose-100 text-rose-700',
+      weak_action_verb: 'bg-orange-100 text-orange-700',
+      responsibility_only: 'bg-purple-100 text-purple-700',
+      repetitive: 'bg-blue-100 text-blue-700',
+      unclear: 'bg-indigo-100 text-indigo-700',
+      technical_without_context: 'bg-cyan-100 text-cyan-700',
+      missing_business_impact: 'bg-pink-100 text-pink-700',
+    };
+    return styles[type] || 'bg-gray-100 text-gray-700';
   };
   
   const getProblemTypeLabel = (type) => {
@@ -30,47 +46,73 @@ const BulletReview = ({ bulletReviews }) => {
   };
   
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-      <h3 className="text-lg font-bold text-gray-800 mb-4">
-        {'\uD83D\uDCDD'} {'\u1265\u1275\u134D\u130D \u1263\u1245\u1275\u1237\u1248\u130D\u1273\u1295'}
+    <div className="glass rounded-3xl shadow-xl p-8 mb-6 card-hover">
+      <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
+        <span className="text-xl">{'\uD83D\uDCDD'}</span>
+        {'\u1265\u1275\u134D\u130D \u1263\u1245\u1275\u1237\u1248\u130D\u1273\u1295'}
       </h3>
       
       <div className="space-y-4">
         {bulletReviews.map((bullet, index) => (
-          <div key={index} className="border border-gray-200 rounded-lg p-4">
-            <div className="mb-3">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-gray-500">{'\u1273\u1275\u12AB\u1273:'}</span>
-                <span className={`text-xs px-2 py-1 rounded-full ${formatters.getPriorityColor('medium')}`}>
-                  {getProblemTypeLabel(bullet.problem_type)}
-                </span>
+          <div key={index} className="border border-gray-100 rounded-2xl p-5 hover:border-primary-200 transition-all duration-300">
+            {/* Header */}
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide">{'\u1273\u1275\u12AB\u1273'}</span>
+              <span className={`text-xs px-2 py-1 rounded-full font-medium ${getProblemTypeStyle(bullet.problem_type)}`}>
+                {getProblemTypeLabel(bullet.problem_type)}
+              </span>
+            </div>
+            
+            {/* Original */}
+            <div className="bg-gray-50 rounded-xl p-4 mb-4">
+              <p className="text-gray-700 italic">&ldquo;{bullet.original}&rdquo;</p>
+            </div>
+            
+            {/* Problem */}
+            <div className="flex items-start gap-3 mb-4">
+              <div className="flex-shrink-0 w-8 h-8 bg-rose-100 rounded-lg flex items-center justify-center">
+                <span className="text-sm">{'\u26A0'}</span>
               </div>
-              <p className="text-gray-700 italic bg-gray-50 p-2 rounded">
-                &ldquo;{bullet.original}&rdquo;
-              </p>
+              <div>
+                <p className="text-xs font-semibold text-rose-600 uppercase tracking-wide mb-1">{'\u1348\u134D\u1295'}</p>
+                <p className="text-gray-600 text-sm">{bullet.problem}</p>
+              </div>
             </div>
             
-            <div className="mb-3">
-              <span className="text-sm font-medium text-red-600">{'\u1348\u134D\u1295:'}</span>
-              <p className="text-gray-600 text-sm">{bullet.problem}</p>
+            {/* Explanation */}
+            <div className="flex items-start gap-3 mb-4">
+              <div className="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+                <span className="text-sm">{'\uD83D\uDCA1'}</span>
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-primary-600 uppercase tracking-wide mb-1">{'\u1273\u1349\u1349\u1275\u1349\u1348 \u1270\u12A8\u1349\u1349\u1285\u1293\u1275 \u127D\u1205'}</p>
+                <p className="text-gray-600 text-sm">{bullet.explanation}</p>
+              </div>
             </div>
             
-            <div className="mb-3">
-              <span className="text-sm font-medium text-blue-600">{'\u1273\u1349\u1349\u1275\u1349\u1348 \u1270\u12A8\u1349\u1349\u1285\u1293\u1275 \u127D\u1205:'}</span>
-              <p className="text-gray-600 text-sm">{bullet.explanation}</p>
-            </div>
-            
-            <div className="bg-green-50 border-l-4 border-green-500 p-3">
-              <div className="flex items-center justify-between mb-1">
-                <span className="text-sm font-medium text-green-700">{'\u1349\u1349\u1308\u1349\u1275 \u1349\u1325\u1275\u1349\u134D:'}</span>
+            {/* Suggestion */}
+            <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-4">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-xs font-semibold text-emerald-700 uppercase tracking-wide flex items-center gap-1">
+                  <span>{'\u270D\uFE0F'}</span>
+                  {'\u1349\u1349\u1308\u1349\u1275 \u1349\u1325\u1275\u1349\u134D'}
+                </p>
                 <button
                   onClick={() => copyToClipboard(bullet.suggestion, index)}
-                  className="text-xs text-blue-600 hover:text-blue-800"
+                  className="text-xs text-primary-600 hover:text-primary-800 font-medium flex items-center gap-1 transition-colors"
                 >
-                  {copiedIndex === index ? '\u2705 \u1349\u1275\u1347\u134D!' : '\uD83D\uDCCB \u134D\u1244\u1275'}
+                  {copiedIndex === index ? (
+                    <>
+                      <span className="text-emerald-500">{'\u2705'}</span> {'\u1349\u1275\u1347\u134D!'}
+                    </>
+                  ) : (
+                    <>
+                      <span>{'\uD83D\uDCCB'}</span> {'\u134D\u1244\u1275'}
+                    </>
+                  )}
                 </button>
               </div>
-              <p className="text-gray-700">&ldquo;{bullet.suggestion}&rdquo;</p>
+              <p className="text-gray-700 italic">&ldquo;{bullet.suggestion}&rdquo;</p>
             </div>
           </div>
         ))}

@@ -4,7 +4,7 @@ const ATSReview = ({ atsReview }) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-6 mb-6">
       <h3 className="text-lg font-bold text-gray-800 mb-4">
-        ATS ማህደረ ቢሮ ማረ寇er
+        ATS {'\u1260\u1295\u1275\u127F \u1263\u1245\u1275\u1237\u1248\u130D\u1273\u1295'}
       </h3>
       
       <div className="flex items-center gap-2 mb-4">
@@ -14,7 +14,7 @@ const ATSReview = ({ atsReview }) => {
       
       {atsReview.strengths.length > 0 && (
         <div className="mb-4">
-          <h4 className="font-medium text-green-700 mb-2">✓ ጠቃሚ ነገሮች:</h4>
+          <h4 className="font-medium text-green-700 mb-2">{'\u2713'} {'\u1260\u1275\u12F3\u1349\u1275 \u1273\u1276\u1293\u1275:'}</h4>
           <ul className="list-disc list-inside text-gray-600 space-y-1">
             {atsReview.strengths.map((item, index) => (
               <li key={index}>{item}</li>
@@ -25,7 +25,7 @@ const ATSReview = ({ atsReview }) => {
       
       {atsReview.risks.length > 0 && (
         <div className="mb-4">
-          <h4 className="font-medium text-red-700 mb-2">⚠ የአደጋ ምልክቶች:</h4>
+          <h4 className="font-medium text-red-700 mb-2">{'\u26A0'} {'\u1270\u1325\u1275\u12B3 \u1349\u1269\u1275\u1273\u1275:'}</h4>
           <ul className="list-disc list-inside text-gray-600 space-y-1">
             {atsReview.risks.map((item, index) => (
               <li key={index}>{item}</li>
@@ -36,7 +36,7 @@ const ATSReview = ({ atsReview }) => {
       
       {atsReview.recommendations.length > 0 && (
         <div>
-          <h4 className="font-medium text-blue-700 mb-2">💡 ምክሮች:</h4>
+          <h4 className="font-medium text-blue-700 mb-2">{'\uD83D\uDCA1'} {'\u1273\u1348\u1275\u1273:'}</h4>
           <ul className="list-disc list-inside text-gray-600 space-y-1">
             {atsReview.recommendations.map((item, index) => (
               <li key={index}>{item}</li>

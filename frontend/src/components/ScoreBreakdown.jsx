@@ -2,20 +2,20 @@ import { formatters } from '../utils/formatters';
 
 const ScoreBreakdown = ({ breakdown }) => {
   const categories = [
-    { key: 'ats', label: 'ATS ማህደረ ቢሮ' },
-    { key: 'content', label: 'የይዘት ጥራት' },
-    { key: 'experience', label: 'የስራ ግንኙነት' },
-    { key: 'skills', label: 'ክህሎቶች' },
-    { key: 'projects', label: 'ፕሮጀክቶች' },
-    { key: 'formatting', label: 'ፎርማት ማድረግ' },
-    { key: 'clarity', label: 'ግልጽነት' },
-    { key: 'impact', label: 'ተጽዕኖ' },
-    { key: 'career_positioning', label: 'የስራ ቦታ' },
+    { key: 'ats', label: 'ATS \u1260\u1295\u1275\u127F' },
+    { key: 'content', label: '\u1260\u127D\u12AB\u1275 \u1349\u1325\u1271' },
+    { key: 'experience', label: '\u1265\u1275\u122B \u130D\u1276\u1293\u1275' },
+    { key: 'skills', label: '\u1348\u1275\u1273\u1275' },
+    { key: 'projects', label: '\u1353\u1275\u134D\u1275\u12AF\u1349\u1375' },
+    { key: 'formatting', label: '\u134C\u1295\u12B3 \u1273\u1276\u1293\u1295' },
+    { key: 'clarity', label: '\u130D\u1276\u1293\u1275' },
+    { key: 'impact', label: '\u1349\u1325\u134E\u1275\u1275\u1348' },
+    { key: 'career_positioning', label: '\u1265\u1275\u122B \u1260\u1275\u1348' },
   ];
   
   return (
     <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-      <h3 className="text-lg font-bold text-gray-800 mb-4">የምንẓ洝 ስኬት</h3>
+      <h3 className="text-lg font-bold text-gray-800 mb-4">{'\u1273\u1349\u1275\u1276 \u1273\u1276\u1293\u1275'}</h3>
       
       <div className="space-y-3">
         {categories.map(({ key, label }) => {

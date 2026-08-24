@@ -27,10 +27,10 @@ export const formatters = {
   
   getPriorityLabel(priority) {
     const labels = {
-      critical: 'ወዲያውኑ',
-      high: 'ከፍተኛ',
-      medium: 'መካከለኛ',
-      low: 'ዝቅተኛ',
+      critical: '\u1270\u1278\u1293\u1295\u130D\u1263\u1275',
+      high: '\u1260\u1275\u12F3\u1349\u1275',
+      medium: '\u1273\u1275\u134D\u1273\u1276\u1293\u1275',
+      low: '\u1325\u134D\u1349\u1275',
     };
     return labels[priority] || priority;
   },

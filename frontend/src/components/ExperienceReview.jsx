@@ -4,7 +4,7 @@ const ExperienceReview = ({ experienceReview }) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-6 mb-6">
       <h3 className="text-lg font-bold text-gray-800 mb-4">
-        የስራ ግንኙነት ማረ寇er
+        {'\u1265\u1275\u122B \u130D\u1276\u1293\u1275 \u1263\u1245\u1275\u1237\u1248\u130D\u1273\u1295'}
       </h3>
       
       <div className="space-y-6">
@@ -25,7 +25,7 @@ const ExperienceReview = ({ experienceReview }) => {
             
             {exp.strengths.length > 0 && (
               <div className="mb-2">
-                <p className="text-sm font-medium text-green-700">✓ ጠቃሚ ነገሮች:</p>
+                <p className="text-sm font-medium text-green-700">{'\u2713'} {'\u1260\u1275\u12F3\u1349\u1275 \u1273\u1276\u1293\u1275:'}</p>
                 <ul className="list-disc list-inside text-sm text-gray-600">
                   {exp.strengths.map((s, i) => (
                     <li key={i}>{s}</li>
@@ -36,7 +36,7 @@ const ExperienceReview = ({ experienceReview }) => {
             
             {exp.problems.length > 0 && (
               <div className="mb-2">
-                <p className="text-sm font-medium text-red-700">⚠ ችግሮች:</p>
+                <p className="text-sm font-medium text-red-700">{'\u26A0'} {'\u1348\u134D\u1293\u1275:'}</p>
                 <ul className="list-disc list-inside text-sm text-gray-600">
                   {exp.problems.map((p, i) => (
                     <li key={i}>{p}</li>
@@ -47,7 +47,7 @@ const ExperienceReview = ({ experienceReview }) => {
             
             {exp.recommendations.length > 0 && (
               <div>
-                <p className="text-sm font-medium text-blue-700">💡 ምክሮች:</p>
+                <p className="text-sm font-medium text-blue-700">{'\uD83D\uDCA1'} {'\u1273\u1348\u1275\u1273:'}</p>
                 <ul className="list-disc list-inside text-sm text-gray-600">
                   {exp.recommendations.map((r, i) => (
                     <li key={i}>{r}</li>

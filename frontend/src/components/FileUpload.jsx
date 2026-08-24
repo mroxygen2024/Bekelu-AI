@@ -40,13 +40,13 @@ const FileUpload = ({ onFileSelect, disabled }) => {
     ];
     
     if (!validTypes.includes(file.type)) {
-      alert('እባክዎ PDF ወይም DOCX ፋይል ይምረጡ');
+      alert('\u1348\u12B7\u12BD\u1275 PDF \u127D\u1275 DOCX \u1349\u1275\u127D \u1275\u134D\u1275\u134D');
       return;
     }
     
     const maxSize = 10 * 1024 * 1024;
     if (file.size > maxSize) {
-      alert('ፋይሉ ታላቅ ነው። ከ 10MB በታች ይምረጡ');
+      alert('\u1349\u1275\u127D\u1276 \u1273\u1275\u1346\u1275\u122B \u127D\u1205\u002E \u1260 10MB \u1270\u1325\u127D \u1275\u134D\u1275\u134D');
       return;
     }
     
@@ -81,21 +81,21 @@ const FileUpload = ({ onFileSelect, disabled }) => {
       />
       
       <div className="space-y-4">
-        <div className="text-6xl">📄</div>
+        <div className="text-6xl">{'\uD83D\uDCC4'}</div>
         
         <div>
           <p className="text-lg font-medium text-gray-700">
-            ሪዝዩሜዎን እዚህ ይጣሉ
+            {'\u1265\u127D\u12AB\u121B\u1285\u1276 \u1270\u12A8\u1275\u12DA \u1275\u1273\u1273\u1275'}
           </p>
           <p className="text-sm text-gray-500 mt-1">
-            PDF ወይም DOCX • ከ 10MB በታች
+            PDF \u127D\u1275 DOCX &bull; {'\u1260'} 10MB {'\u1270\u1325\u127D'}
           </p>
         </div>
         
         {selectedFile && (
           <div className="bg-gray-100 rounded-md p-3 inline-block">
             <p className="text-sm text-gray-700">
-              ✅ {selectedFile.name}
+              {'\u2705'} {selectedFile.name}
             </p>
           </div>
         )}
@@ -109,7 +109,7 @@ const FileUpload = ({ onFileSelect, disabled }) => {
           }}
           disabled={disabled}
         >
-          ፋይል ይምረጡ
+          {'\u1349\u1275\u127D \u1275\u134D\u1275\u134D'}
         </button>
       </div>
     </div>

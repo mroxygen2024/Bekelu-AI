@@ -6,7 +6,7 @@ const PriorityFixes = ({ priorities }) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-6 mb-6">
       <h3 className="text-lg font-bold text-gray-800 mb-4">
-        🔥 ይህን ይቅሩ
+        {'\uD83D\uDD25'} {'\u1275\u127D \u1275\u134E\u1275\u1349\u1273'}
       </h3>
       
       <div className="space-y-3">

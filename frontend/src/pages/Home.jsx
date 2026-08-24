@@ -40,12 +40,12 @@ const Home = () => {
   };
   
   const tabs = [
-    { id: 'overview', label: 'ማ Đình ሰው财务管理' },
+    { id: 'overview', label: '\u1218\u134D\u1275\u122B \u1230\u1295' },
     { id: 'ats', label: 'ATS' },
-    { id: 'content', label: 'የይዘት' },
-    { id: 'experience', label: 'የስራ ግንኙነት' },
-    { id: 'skills', label: 'ክህሎቶች' },
-    { id: 'formatting', label: 'ፎርማት' },
+    { id: 'content', label: '\u1260\u127D\u12AB\u1275' },
+    { id: 'experience', label: '\u1265\u1275\u122B \u130D\u1276\u1293\u1275' },
+    { id: 'skills', label: '\u1348\u1275\u1273\u1275' },
+    { id: 'formatting', label: '\u134C\u1295\u12B3\u1275' },
   ];
   
   return (
@@ -65,7 +65,7 @@ const Home = () => {
             
             {loading && (
               <div className="mt-4 text-center">
-                <p className="text-gray-600">ፋይሉ እየተጫነ ነው...</p>
+                <p className="text-gray-600">{'\u1349\u1275\u127D\u121B \u1270\u12A8\u1275\u12DA \u1348\u134D\u1293 \u127D\u1205...'}</p>
               </div>
             )}
           </div>
@@ -74,18 +74,18 @@ const Home = () => {
         {step === 'review' && resume && (
           <div className="bg-white rounded-lg shadow-md p-6 mb-6">
             <h2 className="text-xl font-bold text-gray-800 mb-4">
-              ሪዝዩሜ ተ晁alic!
+              {'\u1265\u127D\u12AB\u121B \u1349\u1275\u1273!'}
             </h2>
             <p className="text-gray-600 mb-4">
-              {resume.filename} ተ晁alic • ከ {resume.file_size} ባይթ
+              {resume.filename} {'\u1349\u1275\u1273'} &bull; {resume.file_size} {'\u1260\u1295\u1275\u127F'}
             </p>
             
             <TargetJobForm onSubmit={handleReview} disabled={loading} />
             
             {loading && (
               <div className="mt-4 text-center">
-                <p className="text-gray-600">ሪዝዩሜ እየተረ寇er ነው...</p>
-                <p className="text-sm text-gray-500">ይህ ጥ衡 necessarily ሊወስድ ይችላል</p>
+                <p className="text-gray-600">{'\u1265\u127D\u12AB\u121B \u1270\u12A8\u1275\u12DA \u1263\u1245\u1275\u1237\u1248\u130D\u1273\u1295 \u127D\u1205...'}</p>
+                <p className="text-sm text-gray-500">{'\u1275\u127D \u1349\u1295 \u1275\u127D\u130D\u1293\u1295 \u127D\u1205'}</p>
               </div>
             )}
           </div>
@@ -94,12 +94,12 @@ const Home = () => {
         {step === 'results' && review && (
           <div>
             <div className="bg-white rounded-lg shadow-md mb-6 overflow-hidden">
-              <div className="flex border-b">
+              <div className="flex border-b overflow-x-auto">
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`flex-1 py-3 px-4 text-sm font-medium transition-colors ${
+                    className={`flex-1 py-3 px-4 text-sm font-medium transition-colors whitespace-nowrap ${
                       activeTab === tab.id
                         ? 'bg-blue-50 text-blue-600 border-b-2 border-blue-600'
                         : 'text-gray-500 hover:bg-gray-50'

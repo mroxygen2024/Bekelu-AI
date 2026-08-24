@@ -2,18 +2,18 @@ const ReviewActions = ({ onReset }) => {
   const downloadReview = () => {
     alert('PDF download coming soon!');
   };
-  
+
   return (
-    <div className="glass rounded-3xl shadow-xl p-8 card-hover">
-      <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
+    <div className="glass rounded-3xl shadow-card p-8 card-hover">
+      <h3 className="text-lg font-bold text-white/90 mb-6 flex items-center gap-2">
         <span className="text-xl">{'\uD83D\uDE80'}</span>
         Actions
       </h3>
-      
+
       <div className="flex gap-4 flex-wrap">
         <button
           onClick={onReset}
-          className="flex-1 min-w-[200px] bg-gradient-to-r from-gray-500 to-gray-600 text-white px-6 py-3 rounded-xl hover:from-gray-600 hover:to-gray-700 transition-all duration-300 font-medium shadow-lg hover:shadow-xl btn-shine"
+          className="flex-1 min-w-[200px] bg-white/5 hover:bg-white/10 text-white/70 hover:text-white/90 border border-white/10 hover:border-white/20 px-6 py-3 rounded-xl transition-all duration-300 font-medium"
         >
           <span className="flex items-center justify-center gap-2">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -22,10 +22,10 @@ const ReviewActions = ({ onReset }) => {
             Review Another Resume
           </span>
         </button>
-        
+
         <button
           onClick={downloadReview}
-          className="flex-1 min-w-[200px] bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-xl hover:from-primary-600 hover:to-primary-700 transition-all duration-300 font-medium shadow-lg hover:shadow-xl btn-shine"
+          className="flex-1 min-w-[200px] bg-primary-600 hover:bg-primary-500 text-white px-6 py-3 rounded-xl transition-all duration-300 font-medium shadow-lg hover:shadow-glow btn-shine"
         >
           <span className="flex items-center justify-center gap-2">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

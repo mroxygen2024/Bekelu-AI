@@ -5,7 +5,7 @@ const PriorityFixes = ({ priorities }) => {
     <div className="glass rounded-3xl shadow-xl p-8 mb-6 card-hover">
       <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
         <span className="text-xl">{'\uD83D\uDD25'}</span>
-        {'\u1275\u127D \u1275\u134E\u1275\u1349\u1273'}
+        Fix These First
       </h3>
       
       <div className="space-y-3">

@@ -9,10 +9,9 @@ const CareerPositioning = ({ careerPositioning }) => {
     <div className="glass rounded-3xl shadow-xl p-8 mb-6 card-hover">
       <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
         <span className="text-xl">{'\uD83C\uDFAF'}</span>
-        {'\u1265\u1275\u122B \u1260\u1275\u1348 \u1263\u1245\u1275\u1237\u1248\u130D\u1273\u1295'}
+        Career Positioning
       </h3>
       
-      {/* Score */}
       <div className="flex items-center gap-4 mb-6">
         <div className="relative">
           <svg className="w-20 h-20 transform -rotate-90">
@@ -28,17 +27,15 @@ const CareerPositioning = ({ careerPositioning }) => {
         </div>
       </div>
       
-      {/* Assessment */}
       <div className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-xl p-5 mb-5">
         <p className="text-gray-700 leading-relaxed">{careerPositioning.assessment}</p>
       </div>
       
-      {/* Recommendations */}
       {careerPositioning.recommendations.length > 0 && (
         <div>
           <h4 className="font-semibold text-primary-700 mb-3 flex items-center gap-2">
             <span className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center text-sm">{'\uD83D\uDCA1'}</span>
-            {'\u1273\u1348\u1275\u1273'}
+            Recommendations
           </h4>
           <div className="space-y-2">
             {careerPositioning.recommendations.map((item, index) => (

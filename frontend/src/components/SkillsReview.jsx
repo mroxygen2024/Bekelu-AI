@@ -9,10 +9,9 @@ const SkillsReview = ({ skillsReview }) => {
     <div className="glass rounded-3xl shadow-xl p-8 mb-6 card-hover">
       <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
         <span className="text-xl">{'\u26A1'}</span>
-        {'\u1348\u1275\u1273\u1275 \u1263\u1245\u1275\u1237\u1248\u130D\u1273\u1295'}
+        Skills Review
       </h3>
       
-      {/* Score */}
       <div className="flex items-center gap-4 mb-6">
         <div className="relative">
           <svg className="w-20 h-20 transform -rotate-90">
@@ -27,18 +26,17 @@ const SkillsReview = ({ skillsReview }) => {
           </div>
         </div>
         <div>
-          <p className="text-sm text-gray-500">{'\u1260\u1275\u12F3\u1349\u1275 \u1273\u1276\u1293\u1275'}: {skillsReview.strengths.length}</p>
-          <p className="text-sm text-gray-500">{'\u1348\u134D\u1293\u1275'}: {skillsReview.problems.length}</p>
-          <p className="text-sm text-gray-500">{'\u1270\u1346\u1275\u1273\u1275'}: {skillsReview.unsupported_skills.length}</p>
+          <p className="text-sm text-gray-500">Strengths: {skillsReview.strengths.length}</p>
+          <p className="text-sm text-gray-500">Problems: {skillsReview.problems.length}</p>
+          <p className="text-sm text-gray-500">Unsupported: {skillsReview.unsupported_skills.length}</p>
         </div>
       </div>
       
-      {/* Strengths */}
       {skillsReview.strengths.length > 0 && (
         <div className="mb-5">
           <h4 className="font-semibold text-emerald-700 mb-3 flex items-center gap-2">
             <span className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center text-sm">{'\u2713'}</span>
-            {'\u1260\u1275\u12F3\u1349\u1275 \u1273\u1276\u1293\u1275'}
+            Strengths
           </h4>
           <div className="space-y-2">
             {skillsReview.strengths.map((item, index) => (
@@ -51,12 +49,11 @@ const SkillsReview = ({ skillsReview }) => {
         </div>
       )}
       
-      {/* Problems */}
       {skillsReview.problems.length > 0 && (
         <div className="mb-5">
           <h4 className="font-semibold text-rose-700 mb-3 flex items-center gap-2">
             <span className="w-6 h-6 bg-rose-100 rounded-full flex items-center justify-center text-sm">{'\u2717'}</span>
-            {'\u1348\u134D\u1293\u1275'}
+            Problems
           </h4>
           <div className="space-y-2">
             {skillsReview.problems.map((item, index) => (
@@ -69,12 +66,11 @@ const SkillsReview = ({ skillsReview }) => {
         </div>
       )}
       
-      {/* Unsupported Skills */}
       {skillsReview.unsupported_skills.length > 0 && (
         <div className="mb-5">
           <h4 className="font-semibold text-amber-700 mb-3 flex items-center gap-2">
             <span className="w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center text-sm">{'\u26A1'}</span>
-            {'\u1270\u1346\u1275\u1273\u1275 \u1348\u1275\u1273\u1275'}
+            Unsupported Skills
           </h4>
           <div className="space-y-2">
             {skillsReview.unsupported_skills.map((item, index) => (
@@ -87,12 +83,11 @@ const SkillsReview = ({ skillsReview }) => {
         </div>
       )}
       
-      {/* Recommendations */}
       {skillsReview.recommendations.length > 0 && (
         <div>
           <h4 className="font-semibold text-primary-700 mb-3 flex items-center gap-2">
             <span className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center text-sm">{'\uD83D\uDCA1'}</span>
-            {'\u1273\u1348\u1275\u1273'}
+            Recommendations
           </h4>
           <div className="space-y-2">
             {skillsReview.recommendations.map((item, index) => (

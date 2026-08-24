@@ -13,14 +13,14 @@ const TargetJobForm = ({ onSubmit, disabled }) => {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div>
         <label className="block text-sm font-semibold text-gray-700 mb-2">
-          {'\u1278\u1213\u1275\u122B \u1265\u1275\u122B \u1235\u1275\u1340\u1275\u1308\u1276'} <span className="text-gray-400 font-normal">({'\u1270\u1275\u1263\u1295\u1275\u127D'})</span>
+          Target Job Title <span className="text-gray-400 font-normal">(optional)</span>
         </label>
         <div className="relative">
           <input
             type="text"
             value={targetRole}
             onChange={(e) => setTargetRole(e.target.value)}
-            placeholder={'\u1265\u1260 \u1263\u1348\u1275: Backend Engineer'}
+            placeholder="e.g. Backend Engineer"
             className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-gray-50 focus:bg-white"
             disabled={disabled}
           />
@@ -34,12 +34,12 @@ const TargetJobForm = ({ onSubmit, disabled }) => {
       
       <div>
         <label className="block text-sm font-semibold text-gray-700 mb-2">
-          {'\u1265\u1275\u122B \u1265\u1275\u1346\u1275\u1273\u1275'} <span className="text-gray-400 font-normal">({'\u1270\u1275\u1263\u1295\u1275\u127D'})</span>
+          Paste Job Description <span className="text-gray-400 font-normal">(optional)</span>
         </label>
         <textarea
           value={jobDescription}
           onChange={(e) => setJobDescription(e.target.value)}
-          placeholder={'\u1278\u1213\u1275\u122B \u1265\u1275\u1346\u1275\u1273\u1275 \u1270\u12A8\u1275\u12DA \u1275\u1273\u1273\u1275...'}
+          placeholder="Paste the job description here..."
           rows={4}
           className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 bg-gray-50 focus:bg-white resize-none"
           disabled={disabled}
@@ -55,7 +55,7 @@ const TargetJobForm = ({ onSubmit, disabled }) => {
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
           </svg>
-          {'\u1265\u127D\u12AB\u121B\u1285\u1276 \u1275\u1273\u130D\u1275\u1273\u1275 \u1273\u1276\u127D\u1273'}
+          Review My Resume
         </span>
       </button>
     </form>

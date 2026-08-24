@@ -1,13 +1,13 @@
 const ReviewActions = ({ onReset }) => {
   const downloadReview = () => {
-    alert('PDF \u1270\u1276\u127D\u1276\u1295 \u1349\u1275\u1273 \u127D\u1205');
+    alert('PDF download coming soon!');
   };
   
   return (
     <div className="glass rounded-3xl shadow-xl p-8 card-hover">
       <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
         <span className="text-xl">{'\uD83D\uDE80'}</span>
-        {'\u126D\u1275\u1237\u1295\u1275\u1273\u1275'}
+        Actions
       </h3>
       
       <div className="flex gap-4 flex-wrap">
@@ -19,7 +19,7 @@ const ReviewActions = ({ onReset }) => {
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
             </svg>
-            {'\u1270\u1275\u1273\u1275 \u1265\u127D\u12AB\u121B \u1275\u134D\u1275\u134D'}
+            Review Another Resume
           </span>
         </button>
         
@@ -31,7 +31,7 @@ const ReviewActions = ({ onReset }) => {
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
-            {'\u1263\u1245\u1275\u1237\u1248\u130D\u1273\u1295 PDF \u1270\u1276\u127D\u1276\u1295'}
+            Download Review PDF
           </span>
         </button>
       </div>

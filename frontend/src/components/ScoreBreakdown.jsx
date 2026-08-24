@@ -1,16 +1,14 @@
-import { formatters } from '../utils/formatters';
-
 const ScoreBreakdown = ({ breakdown }) => {
   const categories = [
-    { key: 'ats', label: 'ATS \u1260\u1295\u1275\u127F', icon: '\uD83D\uDD0D' },
-    { key: 'content', label: '\u1260\u127D\u12AB\u1275 \u1349\u1325\u1271', icon: '\uD83D\uDCC4' },
-    { key: 'experience', label: '\u1265\u1275\u122B \u130D\u1276\u1293\u1275', icon: '\uD83D\uDCBC' },
-    { key: 'skills', label: '\u1348\u1275\u1273\u1275', icon: '\u26A1' },
-    { key: 'projects', label: '\u1353\u1275\u134D\u1275\u12AF\u1349\u1375', icon: '\uD83D\uDCE6' },
-    { key: 'formatting', label: '\u134C\u1295\u12B3 \u1273\u1276\u1293\u1295', icon: '\u2728' },
-    { key: 'clarity', label: '\u130D\u1276\u1293\u1275', icon: '\uD83D\uDCA1' },
-    { key: 'impact', label: '\u1349\u1325\u134E\u1275\u1275\u1348', icon: '\uD83D\uDCA5' },
-    { key: 'career_positioning', label: '\u1265\u1275\u122B \u1260\u1275\u1348', icon: '\uD83C\uDFAF' },
+    { key: 'ats', label: 'ATS Compatibility', icon: '\uD83D\uDD0D' },
+    { key: 'content', label: 'Content Quality', icon: '\uD83D\uDCC4' },
+    { key: 'experience', label: 'Experience Impact', icon: '\uD83D\uDCBC' },
+    { key: 'skills', label: 'Skills', icon: '\u26A1' },
+    { key: 'projects', label: 'Projects', icon: '\uD83D\uDCE6' },
+    { key: 'formatting', label: 'Formatting', icon: '\u2728' },
+    { key: 'clarity', label: 'Clarity', icon: '\uD83D\uDCA1' },
+    { key: 'impact', label: 'Impact', icon: '\uD83D\uDCA5' },
+    { key: 'career_positioning', label: 'Career Positioning', icon: '\uD83C\uDFAF' },
   ];
   
   const getBarColor = (score) => {
@@ -19,11 +17,17 @@ const ScoreBreakdown = ({ breakdown }) => {
     return 'from-rose-400 to-red-500';
   };
   
+  const getScoreColor = (score) => {
+    if (score >= 80) return 'text-emerald-600';
+    if (score >= 60) return 'text-amber-600';
+    return 'text-rose-600';
+  };
+  
   return (
     <div className="glass rounded-3xl shadow-xl p-8 mb-6 card-hover">
       <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
         <span className="text-xl">{'\uD83D\uDCCA'}</span>
-        {'\u1273\u1349\u1275\u1276 \u1273\u1276\u1293\u1275'}
+        Score Breakdown
       </h3>
       
       <div className="space-y-4">
@@ -36,7 +40,7 @@ const ScoreBreakdown = ({ breakdown }) => {
                   <span className="text-lg">{icon}</span>
                   <span className="text-sm font-medium text-gray-600">{label}</span>
                 </div>
-                <span className={`text-sm font-bold ${formatters.getScoreColor(score)}`}>
+                <span className={`text-sm font-bold ${getScoreColor(score)}`}>
                   {score}
                 </span>
               </div>

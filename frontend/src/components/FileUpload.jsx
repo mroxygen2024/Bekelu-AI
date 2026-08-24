@@ -40,13 +40,13 @@ const FileUpload = ({ onFileSelect, disabled }) => {
     ];
     
     if (!validTypes.includes(file.type)) {
-      alert('\u1348\u12B7\u12BD\u1275 PDF \u127D\u1275 DOCX \u1349\u1275\u127D \u1275\u134D\u1275\u134D');
+      alert('Please select a PDF or DOCX file.');
       return;
     }
     
     const maxSize = 10 * 1024 * 1024;
     if (file.size > maxSize) {
-      alert('\u1349\u1275\u127D\u1276 \u1273\u1275\u1346\u1275\u122B \u127D\u1205 \u1276\u1275\u1270. \u1260 10MB \u1270\u1325\u127D \u1275\u134D\u1275\u134D');
+      alert('File is too large. Please select a file under 10MB.');
       return;
     }
     
@@ -81,24 +81,21 @@ const FileUpload = ({ onFileSelect, disabled }) => {
       />
       
       <div className="space-y-5">
-        {/* Icon */}
         <div className={`inline-flex items-center justify-center w-20 h-20 rounded-full transition-all duration-300 ${
           dragActive ? 'bg-primary-100 scale-110' : 'bg-gray-100'
         }`}>
           <span className="text-4xl">{dragActive ? '\uD83D\uDCE5' : '\uD83D\uDCC4'}</span>
         </div>
         
-        {/* Text */}
         <div>
           <p className="text-xl font-semibold text-gray-700 mb-2">
-            {'\u1265\u127D\u12AB\u121B\u1285\u1276 \u1270\u12A8\u1275\u12DA \u1275\u1273\u1273\u1275'}
+            Drop your resume here
           </p>
           <p className="text-sm text-gray-500">
-            {'\u1349\u1275\u127D\u121B \u1284\u1275\u127D\u1273 \u1265\u1275\u134D\u130D \u127D\u1275\u122B'} &bull; PDF \u127D\u1275 DOCX &bull; {'\u1260'} 10MB
+            or click to browse &bull; PDF or DOCX &bull; Max 10MB
           </p>
         </div>
         
-        {/* Selected file */}
         {selectedFile && (
           <div className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 px-4 py-2 rounded-full animate-scale-in">
             <span className="text-lg">{'\u2705'}</span>
@@ -106,7 +103,6 @@ const FileUpload = ({ onFileSelect, disabled }) => {
           </div>
         )}
         
-        {/* Upload button */}
         <button
           type="button"
           className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-3 rounded-xl hover:from-primary-600 hover:to-primary-700 transition-all duration-300 font-medium shadow-lg hover:shadow-xl btn-shine"
@@ -119,7 +115,7 @@ const FileUpload = ({ onFileSelect, disabled }) => {
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
           </svg>
-          {'\u1349\u1275\u127D \u1275\u134D\u1275\u134D'}
+          Choose File
         </button>
       </div>
     </div>

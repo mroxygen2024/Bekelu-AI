@@ -9,10 +9,9 @@ const ATSReview = ({ atsReview }) => {
     <div className="glass rounded-3xl shadow-xl p-8 mb-6 card-hover">
       <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
         <span className="text-xl">{'\uD83D\uDD0D'}</span>
-        ATS {'\u1260\u1295\u1275\u127F \u1263\u1245\u1275\u1237\u1248\u130D\u1273\u1295'}
+        ATS Compatibility Review
       </h3>
       
-      {/* Score */}
       <div className="flex items-center gap-4 mb-6">
         <div className="relative">
           <svg className="w-20 h-20 transform -rotate-90">
@@ -27,17 +26,16 @@ const ATSReview = ({ atsReview }) => {
           </div>
         </div>
         <div>
-          <p className="text-sm text-gray-500">{'\u1260\u1275\u12F3\u1349\u1275 \u1273\u1276\u1293\u1275'}: {atsReview.strengths.length}</p>
-          <p className="text-sm text-gray-500">{'\u1260\u1325\u1275\u12B3 \u1273\u1276\u1293\u1275'}: {atsReview.risks.length}</p>
+          <p className="text-sm text-gray-500">Strengths: {atsReview.strengths.length}</p>
+          <p className="text-sm text-gray-500">Risks: {atsReview.risks.length}</p>
         </div>
       </div>
       
-      {/* Strengths */}
       {atsReview.strengths.length > 0 && (
         <div className="mb-5">
           <h4 className="font-semibold text-emerald-700 mb-3 flex items-center gap-2">
             <span className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center text-sm">{'\u2713'}</span>
-            {'\u1260\u1275\u12F3\u1349\u1275 \u1273\u1276\u1293\u1275'}
+            Strengths
           </h4>
           <div className="space-y-2">
             {atsReview.strengths.map((item, index) => (
@@ -50,12 +48,11 @@ const ATSReview = ({ atsReview }) => {
         </div>
       )}
       
-      {/* Risks */}
       {atsReview.risks.length > 0 && (
         <div className="mb-5">
           <h4 className="font-semibold text-amber-700 mb-3 flex items-center gap-2">
             <span className="w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center text-sm">{'\u26A0'}</span>
-            {'\u1260\u1325\u1275\u12B3 \u1273\u1276\u1293\u1275'}
+            Potential Risks
           </h4>
           <div className="space-y-2">
             {atsReview.risks.map((item, index) => (
@@ -68,12 +65,11 @@ const ATSReview = ({ atsReview }) => {
         </div>
       )}
       
-      {/* Recommendations */}
       {atsReview.recommendations.length > 0 && (
         <div>
           <h4 className="font-semibold text-primary-700 mb-3 flex items-center gap-2">
             <span className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center text-sm">{'\uD83D\uDCA1'}</span>
-            {'\u1273\u1348\u1275\u1273'}
+            Recommendations
           </h4>
           <div className="space-y-2">
             {atsReview.recommendations.map((item, index) => (

@@ -11,7 +11,7 @@ const ProjectsReview = ({ projectsReview }) => {
     <div className="glass rounded-3xl shadow-xl p-8 mb-6 card-hover">
       <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
         <span className="text-xl">{'\uD83D\uDCE6'}</span>
-        {'\u1353\u1275\u134D\u1275\u12AF\u1349\u1375 \u1263\u1245\u1275\u1237\u1248\u130D\u1273\u1295'}
+        Projects Review
       </h3>
       
       <div className="space-y-4">
@@ -31,7 +31,7 @@ const ProjectsReview = ({ projectsReview }) => {
             
             {project.strengths.length > 0 && (
               <div className="mb-4">
-                <p className="text-xs font-semibold text-emerald-600 uppercase tracking-wide mb-2">{'\u1260\u1275\u12F3\u1349\u1275 \u1273\u1276\u1293\u1275'}</p>
+                <p className="text-xs font-semibold text-emerald-600 uppercase tracking-wide mb-2">Strengths</p>
                 <ul className="space-y-1">
                   {project.strengths.map((s, i) => (
                     <li key={i} className="text-sm text-gray-600 flex items-start gap-2">
@@ -45,7 +45,7 @@ const ProjectsReview = ({ projectsReview }) => {
             
             {project.problems.length > 0 && (
               <div className="mb-4">
-                <p className="text-xs font-semibold text-rose-600 uppercase tracking-wide mb-2">{'\u1348\u134D\u1293\u1275'}</p>
+                <p className="text-xs font-semibold text-rose-600 uppercase tracking-wide mb-2">Problems</p>
                 <ul className="space-y-1">
                   {project.problems.map((p, i) => (
                     <li key={i} className="text-sm text-gray-600 flex items-start gap-2">
@@ -59,7 +59,7 @@ const ProjectsReview = ({ projectsReview }) => {
             
             {project.recommendations.length > 0 && (
               <div>
-                <p className="text-xs font-semibold text-primary-600 uppercase tracking-wide mb-2">{'\u1273\u1348\u1275\u1273'}</p>
+                <p className="text-xs font-semibold text-primary-600 uppercase tracking-wide mb-2">Recommendations</p>
                 <ul className="space-y-1">
                   {project.recommendations.map((r, i) => (
                     <li key={i} className="text-sm text-gray-600 flex items-start gap-2">

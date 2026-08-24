@@ -35,7 +35,7 @@ body {
   content: '';
   position: absolute;
   inset: -40px;
-  background: url("/bekelu.jpg") center / cover no-repeat;
+  background: url("/bekelu.jpg") top center / cover no-repeat;
   filter: blur(24px);
   transform: scale(1.1);
 }

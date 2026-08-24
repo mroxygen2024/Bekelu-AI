@@ -3,9 +3,12 @@ import Home from './pages/Home'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Home />
-    </div>
+    <>
+      <div className="bg-wrap"></div>
+      <div className="main-content">
+        <Home />
+      </div>
+    </>
   )
 }
 

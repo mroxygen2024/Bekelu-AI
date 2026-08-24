@@ -4,29 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Reset ── */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ── Blurred Background ── */
-body::before {
-  content: "";
-  position: fixed;
-  inset: -30px;
-  background: url("/bekelu.jpg") center / cover no-repeat;
-  filter: blur(24px);
-  transform: scale(1.08);
-  z-index: -2;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(5, 10, 20, 0.82);
-  z-index: -1;
+html, body, #root {
+  min-height: 100vh;
+  background: #050a14;
 }
 
 body {
@@ -34,6 +21,35 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #e2e8f0;
+}
+
+/* ── Blurred Background ── */
+.bg-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bg-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -40px;
+  background: url("/bekelu.jpg") center / cover no-repeat;
+  filter: blur(24px);
+  transform: scale(1.1);
+}
+
+.bg-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 10, 20, 0.82);
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
   min-height: 100vh;
 }
 

@@ -6,13 +6,13 @@ const ReviewHeader = () => {
       </div>
 
       <h1 className="text-4xl md:text-5xl font-extrabold mb-3">
-        <span className="gradient-text">Beletu</span>
+        <span className="gradient-text">Bekelu</span>
         <span className="text-white/90"> AI Resume Reviewer</span>
       </h1>
 
       <p className="text-lg text-white/50 max-w-xl mx-auto leading-relaxed">
-        Upload your resume and get an evidence-based review of what's working,
-        what's hurting your resume, and what to improve.
+        I can analyze your resume, highlight strengths, identify weaknesses,
+        and suggest improvements to land your dream job.
       </p>
 
       <div className="flex justify-center gap-2 mt-6">

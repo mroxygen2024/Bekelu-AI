@@ -1,4 +1,4 @@
-# Beletu Backend
+# Biiftuu Backend
 
 AI Resume Reviewer backend built with FastAPI.
 

@@ -116,22 +116,29 @@ Biiftuu/
 ├── backend/
 │   ├── app/
 │   │   ├── api/routes/        # API endpoints
+│   │   ├── agents/            # AI agent logic
 │   │   ├── core/              # Config & settings
-│   │   ├── services/          # AI, parsing, review logic
+│   │   ├── prompts/           # Gemini prompt templates
 │   │   ├── schemas/           # Pydantic models
-│   │   └── prompts/           # Gemini prompt templates
+│   │   ├── services/          # AI, parsing, review logic
+│   │   └── utils/             # Validators & text cleaners
+│   ├── tests/                 # Backend tests
 │   ├── requirements.txt
 │   └── runtime.txt
 ├── frontend/
 │   ├── public/
-│   │   └── favicon.svg        # Branding asset
+│   │   ├── favicon.svg        # Favicon
+│   │   └── biiftuu-ai-mockup.png  # Branding asset
 │   ├── src/
 │   │   ├── components/        # UI components
 │   │   ├── hooks/             # React hooks
 │   │   ├── pages/             # Page views
-│   │   └── services/          # API client
+│   │   ├── services/          # API client
+│   │   └── utils/             # Formatters
 │   ├── package.json
-│   └── vite.config.js
+│   ├── vite.config.js
+│   ├── tailwind.config.js
+│   └── postcss.config.js
 └── README.md
 ```
 
@@ -165,7 +172,7 @@ Once the backend is running:
 | Variable | Default | Description |
 |---|---|---|
 | `APP_ENV` | `development` | App environment |
-| `FRONTEND_URL` | `http://localhost:5173,https://your-domain.com` | Allowed CORS origins (comma-separated) |
+| `FRONTEND_URL` | `http://localhost:5173,https://beletu-ai.onrender.com` | Allowed CORS origins (comma-separated) |
 | `GEMINI_API_KEY` | — | **Required.** Google Gemini API key |
 | `GEMINI_MODEL` | `gemini-3.6-flash` | Gemini model to use |
 | `MAX_FILE_SIZE_MB` | `10` | Max upload size |

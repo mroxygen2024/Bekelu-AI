@@ -1,4 +1,4 @@
-# Beletu Frontend
+# Biiftuu Frontend
 
 AI Resume Reviewer frontend built with React + Vite + Tailwind CSS.
 

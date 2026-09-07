@@ -1,5 +1,5 @@
 <p align="center">
-
+  <img src="frontend/public/biiftuu-ai-mockup.png" alt="Biiftuu AI" width="100%" style="border-radius: 16px; margin-bottom: 8px;" />
 </p>
 
 <h1 align="center">Biiftuu — AI Resume Reviewer</h1>
@@ -124,7 +124,7 @@ Biiftuu/
 │   └── runtime.txt
 ├── frontend/
 │   ├── public/
-
+│   │   └── favicon.svg        # Branding asset
 │   ├── src/
 │   │   ├── components/        # UI components
 │   │   ├── hooks/             # React hooks
@@ -165,7 +165,7 @@ Once the backend is running:
 | Variable | Default | Description |
 |---|---|---|
 | `APP_ENV` | `development` | App environment |
-| `FRONTEND_URL` | `http://localhost:5173` | Allowed CORS origin |
+| `FRONTEND_URL` | `http://localhost:5173,https://your-domain.com` | Allowed CORS origins (comma-separated) |
 | `GEMINI_API_KEY` | — | **Required.** Google Gemini API key |
 | `GEMINI_MODEL` | `gemini-3.6-flash` | Gemini model to use |
 | `MAX_FILE_SIZE_MB` | `10` | Max upload size |

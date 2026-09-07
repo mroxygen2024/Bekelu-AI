@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="frontend/public/bekelu.png" alt="Bekelu" width="100%" style="border-radius: 16px; margin-bottom: 8px;" />
+
 </p>
 
-<h1 align="center">Bekelu — AI Resume Reviewer</h1>
+<h1 align="center">Biiftuu — AI Resume Reviewer</h1>
 
 <p align="center">
   <strong>Your AI-powered career companion.</strong><br/>
@@ -20,9 +20,9 @@
 
 ---
 
-## What Bekelu Does
+## What Biiftuu Does
 
-Bekelu analyzes your resume across **6 critical dimensions** and delivers a comprehensive review with scores, priority fixes, and detailed feedback — all powered by Google Gemini AI.
+Biiftuu analyzes your resume across **6 critical dimensions** and delivers a comprehensive review with scores, priority fixes, and detailed feedback — all powered by Google Gemini AI.
 
 ---
 
@@ -112,7 +112,7 @@ The app is now running at **http://localhost:5173** 🚀
 ## Project Structure
 
 ```
-Bekelu/
+Biiftuu/
 ├── backend/
 │   ├── app/
 │   │   ├── api/routes/        # API endpoints
@@ -124,7 +124,7 @@ Bekelu/
 │   └── runtime.txt
 ├── frontend/
 │   ├── public/
-│   │   └── bekelu.png         # Branding asset
+
 │   ├── src/
 │   │   ├── components/        # UI components
 │   │   ├── hooks/             # React hooks
@@ -198,4 +198,4 @@ Once the backend is running:
 
 ## License
 
-MIT © [Bekelu](https://github.com/mroxygen2024)
+MIT © [Biiftuu](https://github.com/mroxygen2024)

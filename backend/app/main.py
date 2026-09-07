@@ -4,7 +4,7 @@ from app.api.routes import health, resumes, reviews
 from app.core.config import settings
 
 app = FastAPI(
-    title="Bekelu - AI Resume Reviewer",
+    title="Biiftuu - AI Resume Reviewer",
     description="AI-powered resume review system",
     version="1.0.0"
 )
@@ -23,4 +23,4 @@ app.include_router(reviews.router, prefix="/api")
 
 @app.get("/")
 async def root():
-    return {"message": "Bekelu AI Resume Reviewer API"}
+    return {"message": "Biiftuu AI Resume Reviewer API"}

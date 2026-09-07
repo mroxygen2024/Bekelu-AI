@@ -35,7 +35,7 @@ body {
   content: '';
   position: absolute;
   inset: -40px;
-  background: url("/bekelu.png") top center / cover no-repeat;
+  background: linear-gradient(135deg, #1a1040 0%, #0c1a3a 40%, #0a0f1e 100%);
   filter: blur(0.5px);
   transform: scale(1.02);
 }

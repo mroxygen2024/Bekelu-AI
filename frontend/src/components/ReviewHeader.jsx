@@ -6,7 +6,7 @@ const ReviewHeader = () => {
       </div>
 
       <h1 className="text-4xl md:text-5xl font-extrabold mb-3">
-        <span className="gradient-text">Bekelu</span>
+        <span className="gradient-text">Biiftuu</span>
         <span className="text-white/90"> AI Resume Reviewer</span>
       </h1>
 

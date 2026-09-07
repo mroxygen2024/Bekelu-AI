@@ -3,7 +3,7 @@ from typing import Optional
 
 class Settings(BaseSettings):
     APP_ENV: str = "development"
-    FRONTEND_URL: str = "http://localhost:5173,https://biiftuu-ai.fuadsano.live,https://beletu.vercel.app"
+    FRONTEND_URL: str = "http://localhost:5173,https://biiftu-ai.fuadsano.live,https://beletu.vercel.app"
     
     GEMINI_API_KEY: Optional[str] = None
     GEMINI_MODEL: str = "gemini-3.6-flash"

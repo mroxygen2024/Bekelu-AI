@@ -11,7 +11,11 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[url.strip() for url in settings.FRONTEND_URL.split(",") if url.strip()],
+    allow_origins=[
+        "http://localhost:5173",
+        "https://biiftuu-ai.fuadsano.live",
+        "https://beletu.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
